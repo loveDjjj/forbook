@@ -1,0 +1,72 @@
+<view class="user-container">
+  <!-- 用户信息 -->
+  <view class="user-info">
+    <button class="avatar" open-type="chooseAvatar" bindchooseavatar="chooseAvatar">
+      <image mode="aspectFit" src="{{avatarUrl}}" class="refreshIcon"></image>
+    </button>
+    <input class="username" type="nickname" placeholder="请输入名字" value="{{UserName||'微信用户'}}" bindblur='changeName'></input>
+  </view>
+
+  <!-- 订单区域 -->
+  <view class="section-title">我的交易</view>
+  <view class="order-grid">
+    <view class="order-items">
+      <view class="order-item" wx:for="{{orders}}" wx:key="index" bindtap="goToOrderDetail" data-index="{{index}}">
+        <image src="/images/{{item}}.png" class="order-icon"></image>
+        <text>{{item}}</text> 
+      </view>
+      <view class="order-item" bindtap="goToFavorite" data-index="{{index}}">
+        <image src="/images/我收藏的.png" class="order-icon"></image>
+        <text>我收藏的</text> 
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="wallet-card">
+  <view class="wallet-header">
+    <text class="balance-title">我的余额</text>
+    <view class="balance-refresh">
+      <image src="/images/refresh.png" class="refresh-icon" bindtap="refreshBalance"></image>
+      <view class="withdraw-btn" bindtap="showWithdrawDialog">提现</view>
+    </view>
+  </view>
+  <view class="balance-amount">
+    <text class="balance-symbol">¥</text>{{balance || '0.00'}}
+  </view>
+</view>
+
+<!-- 其他功能区域 -->
+<view class="menu">
+  <view class="menu-item" bindtap="goToAnswer">
+    <text>买卖答疑</text>
+    <image src="/images/arrow.png" class="arrow"></image>
+  </view>
+</view>
+<view class="menu">
+  <view class="menu-item" bindtap="goToAddress">
+    <text>我的地址</text>
+    <image src="/images/arrow.png" class="arrow"></image>
+  </view>
+  <view class="menu-item" bindtap="goToPhone">
+    <text>绑定手机</text>
+    <image src="/images/arrow.png" class="arrow"></image>
+  </view>
+</view>
+
+<!-- 悬浮客服按钮 -->
+<view class="float-service">
+  <button open-type="contact" class="service-btn" hover-class="service-btn-hover">
+    <image src="/images/service.png" class="service-icon"></image>
+    <text>联系客服</text>
+  </button>
+</view>
+
+<!-- 添加提现弹窗 -->
+<view class="withdraw-dialog" wx:if="{{showWithdrawDialog}}">
+  <view class="withdraw-dialog-content">
+    <view class="withdraw-dialog-text">请通过图片中的二维码添加客服好友，进行提现</view>
+    <image mode="widthFix" src="{{qrCodeUrl}}" class="withdraw-qr"></image>
+    <view class="withdraw-dialog-close" bindtap="hideWithdrawDialog">关闭</view>
+  </view>
+</view>

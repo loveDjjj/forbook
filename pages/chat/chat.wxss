@@ -1,0 +1,160 @@
+/* pages/chat/chat.wxss */
+page {
+  background: #f5f5f5;
+}
+
+.chat-container {
+  padding: 24rpx;
+}
+
+/* 客服信息头部 */
+.service-header {
+  border-radius: 24rpx;
+  display: block;
+  width: 100%;
+  background: #fff;
+  border-radius: 24rpx;
+  padding: 32rpx;
+  margin-bottom: 24rpx;
+  line-height: normal;
+}
+
+/* 重置按钮默认样式 */
+.service-header::after {
+  border: none;
+}
+
+.service-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar-wrapper{
+  width: 80rpx;
+  height: 80rpx;
+  margin: 24rpx;
+}
+.service-avatar {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.service-detail{
+  flex: 1;
+  margin-left: 24rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-title {
+  margin-left: 20rpx;
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #333;
+}
+
+.service-time {
+  font-size: 24rpx;
+  color: #999;
+  margin-left: 8rpx;
+}
+
+.service-arrow {
+  width: 28rpx;
+  height: 28rpx;
+  color: #999999;
+  margin-left: auto;
+  font-size: 40rpx;
+  transition: all 0.3s ease;
+}
+
+.service-header:active .service-arrow {
+  transform: translateX(4rpx);
+}
+
+/* 联系方式列表 */
+.contact-list {
+  background: #fff;
+  border-radius: 24rpx;
+  padding: 0 32rpx;
+}
+
+.contact-item {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 32rpx 0;
+  border-bottom: 2rpx solid #eaeaea;
+}
+
+.contact-item1{
+  border-bottom: none;
+}
+
+.contact-label {
+  font-size: 28rpx;
+  color: #333;
+}
+
+.contact-value {
+  font-size: 28rpx;
+  color: #07c160;
+}
+
+.contact-time {
+  font-size: 24rpx;
+  color: #999;
+}
+/* 聊天列表 */
+.chat-list {
+  background: #f5f5f5;
+  padding: 20rpx;
+  border-radius: 24rpx;
+}
+
+.chat-item {
+  display: flex;
+  align-items: center;
+  padding: 20rpx;
+  background: #ffffff;
+  border-radius: 12rpx;
+  margin-bottom: 12rpx;
+}
+
+.chat-avatar {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+
+.chat-info {
+  flex: 1;
+}
+
+.chat-username {
+  font-size: 30rpx;
+  color: #333333;
+  font-weight: 500;
+}
+
+.chat-lastmessage {
+  font-size: 26rpx;
+  color: #888888;
+  margin-top: 6rpx;
+}
+
+.chat-time {
+  font-size: 22rpx;
+  color: #888888;
+  margin-left: 14rpx;
+}
+
+.chat-unread {
+  font-size: 22rpx;
+  color: #ff4d4f;
+  margin-left: 14rpx;
+}
+

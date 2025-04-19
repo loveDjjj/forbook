@@ -1,0 +1,85 @@
+<view class="container">
+  <view wx:for="{{list}}" wx:key="index">
+    <text class="{{selectedTab == index ? 'tab-selected' : 'tab'}}" bindtap="selectTab" data-tab="{{index}}">{{item}}</text>
+  </view>
+</view>
+
+<!-- 全部 -->
+<swiper class="swiper-container" bindchange="swiperTab" current="{{selectedTab}}" wx:if="{{buyorsell != 0}}">
+  <swiper-item>
+    <scroll-view scroll-y="true" class="scroll-container">
+      <order-item bindrefresh="refresh" list="{{allList}}" wx:if="{{allList.length > 0}}" buyorsell="{{buyorsell}}" />
+      <view wx:else class="empty-tip">暂无订单</view>
+    </scroll-view>
+  </swiper-item>
+
+  <!-- 待发货 -->
+  <swiper-item>
+    <scroll-view scroll-y="true" class="scroll-container">
+      <order-item bindrefresh="refresh" list="{{waitSend}}" wx:if="{{waitSend.length > 0}}" buyorsell="{{buyorsell}}" />
+      <view wx:else class="empty-tip">暂无待发货订单</view>
+    </scroll-view>
+  </swiper-item>
+  <!-- 待收货 -->
+  <swiper-item>
+    <scroll-view scroll-y="true" class="scroll-container">
+      <order-item bindrefresh="refresh" list="{{waitReceive}}" wx:if="{{waitReceive.length > 0}}" buyorsell="{{buyorsell}}" />
+      <view wx:else class="empty-tip">暂无待收货订单</view>
+    </scroll-view>
+  </swiper-item>
+
+  <!-- 打款中 -->
+  <swiper-item wx:if="{{buyorsell === 1}}">
+    <scroll-view scroll-y="true" class="scroll-container">
+      <order-item bindrefresh="refresh" list="{{received}}" wx:if="{{received.length > 0}}" buyorsell="{{buyorsell}}" />
+      <view wx:else class="empty-tip">暂无待结算订单</view>
+    </scroll-view>
+  </swiper-item>
+
+  <!-- 退款中 -->
+  <swiper-item>
+    <scroll-view scroll-y="true" class="scroll-container">
+      <order-item bindrefresh="refresh" list="{{canceling}}" wx:if="{{canceling.length > 0}}" buyorsell="{{buyorsell}}" />
+      <view wx:else class="empty-tip">暂无退款中订单</view>
+    </scroll-view>
+  </swiper-item>
+</swiper>
+
+<swiper class="swiper-container" bindchange="swiperTab" wx:if="{{buyorsell == 0}}" current="{{selectedTab}}">
+  <!-- 在售 -->
+  <swiper-item>
+    <scroll-view scroll-y="true" class="scroll-container">
+      <order-item bindrefresh="refresh" list="{{selling}}" wx:if="{{selling.length > 0}}" buyorsell="{{buyorsell}}" />
+      <view wx:else class="empty-tip">暂无在售书籍</view>
+    </scroll-view>
+  </swiper-item>
+  <!-- 已售出 -->
+  <swiper-item>
+    <scroll-view scroll-y="true" class="scroll-container">
+      <order-item bindrefresh="refresh" list="{{selled}}" wx:if="{{selled.length > 0}}" buyorsell="{{buyorsell}}" />
+      <view wx:else class="empty-tip">暂无已售出书籍</view>
+    </scroll-view>
+  </swiper-item>
+  <!-- 待取件 -->
+  <swiper-item>
+    <scroll-view scroll-y="true" class="scroll-container">
+      <order-item bindrefresh="refresh" list="{{waitPickup}}" wx:if="{{waitPickup.length > 0}}" buyorsell="{{buyorsell}}" />
+      <view wx:else class="empty-tip">暂无待取件书籍</view>
+    </scroll-view>
+  </swiper-item>
+  <!-- 待入库 -->
+  <swiper-item>
+    <scroll-view scroll-y="true" class="scroll-container">
+      <order-item bindrefresh="refresh" list="{{waitIn}}" wx:if="{{waitIn.length > 0}}" buyorsell="{{buyorsell}}" />
+      <view wx:else class="empty-tip">暂无待入库书籍</view>
+    </scroll-view>
+  </swiper-item>
+  <!-- 在库 -->
+  <swiper-item>
+    <scroll-view scroll-y="true" class="scroll-container">
+      <order-item bindrefresh="refresh" list="{{in}}" wx:if="{{in.length > 0}}" buyorsell="{{buyorsell}}" />
+      <view wx:else class="empty-tip">暂无在库书籍</view>
+    </scroll-view>
+  </swiper-item>
+</swiper>
+

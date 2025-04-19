@@ -1,0 +1,33 @@
+<!--pages/index/sort/sort.wxml-->
+<view class="container">
+  <!-- 顶部学校选项卡 -->
+  <scroll-view scroll-x class="school-tabs">
+    <view class="school-tab {{currentSchool === index ? 'active' : ''}}" wx:for="{{schools}}" wx:key="index" bindtap="selectSchool" data-index="{{index}}">
+      {{item}}
+    </view>
+  </scroll-view>
+
+  <view class="content-wrapper">
+    <!-- 左侧学院列表 -->
+    <view class="left-menu">
+      <view class="college-item {{currentCollege === index ? 'active' : ''}}" wx:for="{{colleges}}" wx:key="index" bindtap="selectCollege" data-index="{{index}}">
+        {{item.name}}
+      </view>
+    </view>
+
+    <!-- 右侧专业和学期 -->
+    <view class="right-content">
+      <scroll-view class="major-grid" scroll-y>
+        <view class="major-title" wx:for="{{majors}}" wx:key="index">
+          <view class="major-item">{{item}}</view>
+          <button class="major-item-line" bindtap="selectMajor" data-index="{{index}}" data-grade="大一上">大一上</button>
+          <button class="major-item-line" bindtap="selectMajor" data-index="{{index}}" data-grade="大一下">大一下</button>
+          <button class="major-item-line" bindtap="selectMajor" data-index="{{index}}" data-grade="大二上">大二上</button>
+          <button class="major-item-line" bindtap="selectMajor" data-index="{{index}}" data-grade="大二下">大二下</button>
+          <button class="major-item-line" bindtap="selectMajor" data-index="{{index}}" data-grade="大三上">大三上</button>
+          <button class="major-item-line" bindtap="selectMajor" data-index="{{index}}" data-grade="大三下">大三下</button>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+</view>

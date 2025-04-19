@@ -1,0 +1,28 @@
+<view class="top-container">
+  <view class="category-btn" bindtap="GoSortPage">
+    <image src="/images/layers.png" class="category-icon"></image>
+    <text class="cate-text">分类</text>
+  </view>
+  <view class="search-wrapper">
+    <image src="/images/search.png" class="scan-icon"></image>
+    <input type="text" bindinput="onSearchInput" value="{{searchKeyword}}" placeholder="书名/作者/ISBN/课程名称" placeholder-class="placeholder-style" class="search-input"/>
+  </view>
+  <button bindtap="searchBooks" class="search-button">搜索</button>
+</view>
+
+<view class="filter-bar">
+  <view class="filter-item {{sortType === 'comprehensive' ? 'active' : ''}}" data-type="comprehensive" bindtap="onSortChange">综合</view>
+  <view class="filter-item {{sortType === 'sales' ? 'active' : ''}}" data-type="sales" bindtap="onSortChange">销量</view>
+  <view class="filter-item {{sortType === 'price' ? 'active' : ''}}" data-type="price" bindtap="onSortChange">价格
+    <image class="sort-icon" src="/images/{{priceSort}}.png" wx:if="{{sortType === 'price'}}"></image>
+    <image class="sort-icon" src="/images/none.png" wx:else></image>
+  </view>
+</view>
+
+<view class="book-list">
+  <show-item books="{{bookList}}" />
+</view>
+
+<view class="no-result" wx:if="{{bookList.length === 0}}">
+  <text>暂无相关图书</text>
+</view>

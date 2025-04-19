@@ -1,0 +1,45 @@
+<view class="chat-container">
+  <!-- 顶部客服信息 -->
+  <button class="service-header" hover-class="service-header-hover" open-type="contact">
+    <view class="service-info">
+      <view class="avatar-wrapper">
+        <image src="/images/service.png" class="service-avatar"></image>
+      </view>
+      <view class="service-detail">
+        <view class="service-title">在线客服</view>
+        <view class="service-time">（工作时间: 8:00-20:00）</view>
+        <image src="/images/arrow.png" class="service-arrow"></image>
+      </view>
+    </view>
+  </button>
+
+  <!-- 联系方式列表 -->
+  <view class="contact-list">
+    <view class="contact-item" hover-class="contact-item-hover" bindtap="copyPhone" data-phone="18108282326">
+      <view class="contact-label">联系电话：</view>
+      <view class="contact-value">18108282326</view>
+      <view class="contact-time">（工作时间: 8:00-20:00）</view>
+    </view>
+    <view class="contact-item contact-item1" hover-class="contact-item-hover" bindtap="copyPhone" data-phone="13308182448">
+      <view class="contact-label">投诉建议：</view>
+      <view class="contact-value">13308182448</view>
+      <view class="contact-time">（工作时间: 8:00-20:00）</view>
+    </view>
+  </view>
+</view>
+
+<!-- 聊天列表 -->
+<view class="chat-list">
+  <block wx:for="{{chatList}}" wx:key="userId">
+    <view class="chat-item" hover-class="chat-item-hover" bindtap="gotoMessage" data-userid="{{item.userId}}">
+      <image src="{{item.image}}" class="chat-avatar"></image>
+      <view class="chat-info">
+        <view class="chat-username">{{item.userName}}</view>
+        <view class="chat-lastmessage">{{item.lastMessage || '暂无消息'}}</view>
+      </view>
+      <view class="chat-time">{{item.lastMessageTime || '刚刚'}}</view>
+      <view class="chat-unread" wx:if="{{item.hasUnread}}">未读</view>
+    </view>
+  </block>
+</view>
+

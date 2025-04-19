@@ -1,0 +1,204 @@
+page {
+    background: #f5f5f5;
+  }
+  
+  .container {
+    background: #fff;
+    padding: 24rpx;
+    margin: 24rpx;
+    border-radius: 24rpx;
+    padding-top: 0;
+  }
+  
+  show-item {
+    width: 100%;
+  }
+  
+  .empty-tip {
+    text-align: center;
+    margin: 20rpx 0;
+  }
+  
+  .empty-tip text {
+    color: #999;
+  }
+  
+  .title {
+    font-size: 32rpx;
+    font-weight: bold;
+    margin: 24rpx;
+    margin-right: auto;
+    padding-left: 16rpx;
+    border-left: 8rpx solid #07c160;
+  }
+  
+  /* 添加地址部分的样式 */
+  .add-address {
+    background: #fff;
+    margin: 24rpx;
+    border-radius: 24rpx;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .add-btn {
+    padding: 30rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .add-address image {
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 20rpx;
+  }
+  
+  .add-address text {
+    font-size: 28rpx;
+    color: #333;
+  }
+  
+  /* 在现有样式后添加 */
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999;
+  }
+  
+  .modal-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+  }
+  
+  .modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600rpx;
+    background: #fff;
+    border-radius: 20rpx;
+    padding: 40rpx;
+  }
+  
+  .modal-title {
+    text-align: center;
+    font-size: 32rpx;
+    font-weight: bold;
+    margin-bottom: 40rpx;
+  }
+  
+  .input-group {
+    margin-bottom: 30rpx;
+  }
+  
+  .input-group input {
+    width: 100%;
+    height: 80rpx;
+    border: 2rpx solid #eee;
+    border-radius: 8rpx;
+    padding: 0 20rpx;
+    box-sizing: border-box;
+  }
+  
+  .modal-btns {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40rpx;
+  }
+  
+  .btn {
+    width: 240rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    text-align: center;
+    border-radius: 40rpx;
+    font-size: 28rpx;
+  }
+  
+  .cancel {
+    background: #f5f5f5;
+    color: #666;
+  }
+  
+  .confirm {
+    background: #07c160;
+    color: #fff;
+  }
+  
+  /* 在现有样式中添加 */
+  .address-list {
+    width: 100%;
+  }
+  
+  .address-item {
+    padding: 20rpx 0;
+    border-bottom: 1rpx solid #eee;
+  }
+  
+  .address-item:last-child {
+    border-bottom: none;
+  }
+  
+  .address-title {
+    font-size: 32rpx;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 16rpx;
+  }
+  
+  .address-info {
+    padding-left: 20rpx;
+  }
+  
+  .info-row {
+    display: flex;
+    margin: 10rpx 0;
+    font-size: 28rpx;
+    line-height: 1.5;
+  }
+  
+  .label {
+    color: #666;
+    width: 150rpx;
+    text-align: center;
+  }
+  
+  .content {
+    color: #333;
+    flex: 1;
+  }
+  
+  .address-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16rpx;
+  }
+  
+  .operation-btns {
+    display: flex;
+    align-items: center;
+  }
+  
+  .edit-btn {
+    font-size: 24rpx;
+    color: #07c160;
+    padding: 4rpx 12rpx;
+    margin-right: 16rpx;
+  }
+  
+  .delete-btn {
+    font-size: 24rpx;
+    color: #ff4d4f;
+    padding: 4rpx 12rpx;
+  }
+  

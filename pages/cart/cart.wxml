@@ -1,0 +1,25 @@
+<view class="header">
+  <text class="title">
+    <text class="title-text">共</text>
+    <text class="num">{{chose_option.length}}</text>
+    <text class="title-text">件宝贝</text>
+  </text>
+</view>
+
+<scroll-view class="item-list">
+  <block wx:for="{{chose_option}}" wx:key="index">
+    <view class="item-card-container">
+      <view class="item-card" bindtap='goToDetail' data-index="{{index}}">
+        <lazy-image custom-class="item-image" src="{{item.image_url}}" mode="aspectFit" />
+        <view class="item-info">
+          <text class="name">{{item.book_name}}</text>
+          <view class="price-container">
+            <text class="price" wx:if="{{!item.book_price}}">暂无报价</text>
+            <text class="price" wx:else>￥{{item.book_price}} 起</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+</scroll-view>
+

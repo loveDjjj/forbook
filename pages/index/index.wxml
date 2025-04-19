@@ -1,0 +1,46 @@
+<!-- 顶部搜索区域 -->
+<view class="top-container">
+  <view class="category-btn" bind:tap="GoSortPage">
+    <image src="/images/layers.png" class="category-icon"></image>
+    <text class="cate-text">分类</text>
+  </view>
+  <view class="search-wrapper">
+    <image bindtap="GoSearchPage" src="/images/search.png" class="scan-icon"></image>
+    <view bindtap="GoSearchPage" class="search-view">书名/作者/ISBN/课程名称</view>
+    <image bindtap="scanIsbn" src="/images/扫码.png" class="scan-icon"></image>
+  </view>
+</view>
+
+<!-- 轮播图部分 -->
+<swiper class="banner-swiper" indicator-dots="true" autoplay="true" interval="3000" duration="1000" circular="true">
+  <swiper-item wx:for="{{swiperList}}" wx:key="_id">
+    <image src="{{item.imageUrl}}" class="banner-image"></image>
+  </swiper-item>
+</swiper>
+
+<!-- 畅销书籍部分 -->
+<view class="section">
+  <view class="section-header">畅销书籍</view>
+  <scroll-view scroll-x="{{true}}" class="book-scroll">
+    <view class="book-item" wx:for="{{hotBooks}}" wx:key="_id" bindtap="GoDetailPage" data-r="{{item}}">
+      <lazy-image src="{{item.image_url}}" mode="aspectFit" custom-class="book-image"></lazy-image>
+      <view class="book-info">
+        <text class="book-title">{{item.book_name}}</text>
+        <view class="book-author">{{item.book_author}}</view>
+        <view class="price-info" wx:if="{{item.book_price > 0}}">
+          <text class="price-symbol">¥</text>
+          <text class="price-value">{{item.book_price}}</text>
+        </view>
+        <view class="price-info" wx:else>
+          <text class="price-no">暂无报价</text>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+
+<!-- 特价书籍部分 -->
+<view class="section">
+  <view class="section-header">特价书籍</view>
+  <show-item books="{{specialBooks}}" />
+</view>

@@ -1,0 +1,102 @@
+<view class="background-container">
+  <image src="/images/head.png" mode="widthFix" class="background-image"></image>
+</view>
+<!-- 流程说明区域 -->
+<view class="process-section">
+  <view class='title'>
+    <text class="process-title {{chose =='0' ? 'title-chose' : ''}}" bindtap='chose' data-chose='0'>平台托管</text>
+    <text class="process-title {{chose =='1' ? 'title-chose' : ''}}" bindtap='chose' data-chose='1'>自己保管</text>
+  </view>
+  <view class="explain">
+    <text wx:if="{{chose == '1'}}">平台托管：</text>
+    <text wx:else>自己保管：</text>
+  </view>
+</view>
+<!-- 问题帮助区域 -->
+<view class="help-section">
+  <text class="help-title">卖书有疑问?</text>
+  <image src="/images/arrow.png" class="arrow"></image>
+</view>
+
+<!--结算-->
+<view class="settlement-section">
+  <view class="settlement-left">
+    <text class="total-books">共计{{list0.length + list1.length}}本</text>
+    <text class="total-books">托管书籍数量：{{list0.length}}本</text>
+    <text class="total-books">自己保管书籍数量：{{list1.length}}本</text>
+  </view>
+  <view class="settlement-right">
+    <view class="settlement-submit-button" bindtap='SubmitAll'>提交</view>
+  </view>
+</view>
+
+<!-- 地址选择 -->
+<view class="settlement-section address-section" bindtap="handleAddressClick">
+    <view class="address-item">
+      <text wx:if="{{selectedIndex != -1}}">{{selectedAddress[selectedIndex]}}</text>
+      <text wx:else>请选择地址</text>
+    </view>
+    <picker wx:if="{{addressList.length > 0}}" mode="selector" range="{{selectedAddress}}" bindchange="selectAddress" value="{{selectedIndex}}" style="display: none;">
+    </picker>
+</view>
+
+
+
+<!-- 高价回收书籍列表 -->
+<view class="books-section">
+  <view wx:if="{{chose=='0'}}" class="books-title">托管书籍列表</view>
+  <view wx:else class="books-title">上传书籍列表</view>
+  <swiper class="books-swiper" bindchange="swiperTab" current="{{chose}}">
+    <swiper-item>
+      <scroll-view scroll-y="true">
+        <publish-item binddeleteBook="deleteBook" wx:if="{{list0.length > 0}}" books="{{list0}}" chose="0"/>
+        <view class="book-item" wx:if="{{list0.length === 0}}">
+          <text class="no-book">暂无书籍</text>
+        </view>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item>
+      <scroll-view scroll-y="true">
+        <publish-item binddeleteBook="deleteBook" wx:if="{{list1.length > 0}}" books="{{list1}}" chose="1"/>
+        <view class="book-item" wx:if="{{list1.length === 0}}">
+          <text class="no-book">暂无书籍</text>
+        </view>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+</view>
+
+<!-- 底部按钮 -->
+<view class="bottom-buttons">
+  <button class="btn-isbn" bindtap='showIsbnInput'>输入ISBN</button>
+  <button class="btn-scan" bindtap='scanISBN'>扫码卖书</button>
+</view>
+
+
+<!-- 输入ISBN -->
+<view class="modal" wx:if="{{showIsbnInput}}">
+  <view class="modal-content">
+    <text class="isbn-title">请输入图书ISBN编码</text>
+    <text class="subtitle">请输入不含"-"符号的13位的ISBN编码</text>
+    <input class="isbn-input" placeholder="请输入ISBN编码" value="{{isbn}}" bindinput="inputISBN" />
+    <view class="item-show" wx:if="{{showBookInfo.length > 0}}">
+      <publish-item books="{{showBookInfo}}" chose="2" />
+      <!-- 新增上传图片的功能 -->
+        <view class="upload-section" wx:if="{{showBookInfo.length > 0}}">
+          <input class="price-input" placeholder="请输入你想卖的价格" value="{{price}}" bindinput="inputPrice" />
+          <view wx:if="{{chose == '1'}}" class="upload-button-container">
+            <button bindtap="chooseImage" class="upload-button">上传图片</button>
+          </view>
+          <swiper class="image-swiper" wx:if="{{uploadedImages.length > 0}}" indicator-dots="true" autoplay="false">
+            <swiper-item wx:for="{{uploadedImages}}" wx:key="index">
+              <image src="{{item}}" mode="aspectFill" class="uploaded-image"></image>
+            </swiper-item>
+          </swiper>
+        </view>
+    </view>
+    <view class="buttons">
+      <view class="cancel-button" bindtap="onCancel">取消</view>
+      <view class="submit-button" bindtap="onSubmit">提交</view>
+    </view>
+  </view>
+</view>

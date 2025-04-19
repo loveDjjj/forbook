@@ -1,0 +1,87 @@
+<view class="sell-container">
+  <!-- 遮罩 -->
+  <view wx:if="{{isLoading}}" class="loading-mask" catchtouchmove="true"></view>
+
+  <!--ISBN-->
+  <view class="select-item">
+    <text class="label">图书信息</text>
+    <!-- 图书信息展示区域 -->
+    <view class="book-info" wx:if="{{bookInfo}}">
+      <view class="book-info-container">
+        <image src="{{bookInfo.image_url}}" class="book-info-image"></image>
+        <view class="book-info-content">
+          <view class="book-info-item">
+            <text class="book-info-label">书名:</text>
+            <text class="book-info-value">{{bookInfo.book_name}}</text>
+          </view>
+          <view class="book-info-item">
+            <text class="book-info-label">作者:</text>
+            <text class="book-info-value">{{bookInfo.book_author}}</text>
+          </view>
+          <view class="book-info-item">
+            <text class="book-info-label">出版社:</text>
+            <text class="book-info-value">{{bookInfo.book_publisher}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 图片展示区域 -->
+  <view class="image-container" bindtap="Upload">
+    <view class="image-preview" wx:if="{{tempImagePath}}">
+      <image src="{{tempImagePath}}" mode="aspectFit"></image>
+    </view>
+    <view class="empty-image" wx:else>
+      <text>点击上传图片</text>
+    </view>
+  </view>
+
+  <!-- 书籍描述部分 -->
+  <view class="select-item">
+    <text class="label">书籍描述</text>
+    <view class="description-section">
+      <picker class="condition-picker" mode="selector" range="{{bookConditions}}" bindchange="onConditionChange">
+        <view class="picker-content">
+          <text wx:if="{{selectedCondition}}">{{selectedCondition}}</text>
+          <text wx:else>请选择书籍成色</text>
+        </view>
+      </picker>
+
+      <view class="notes-checkbox">
+        <checkbox-group bindchange="onNotesChange">
+          <checkbox value="hasNotes" class="notes-checkbox-item">是否有笔记</checkbox>
+        </checkbox-group>
+      </view>
+
+      <textarea class="book-input description-input" placeholder="请详细描述书籍情况，如有破损请说明" value="{{description}}" bindinput="onDescriptionInput" maxlength="200" />
+    </view>
+  </view>
+
+  <!-- 售价部分 -->
+  <view class="select-item">
+    <text class="label">售价</text>
+    <view class="price-section">
+      <text class="currency">¥</text>
+      <input class="book-input price-input" type="digit" value="{{price}}" bindinput="onPriceInput" placeholder="请输入售价" />
+    </view>
+  </view>
+
+  <!-- 联系方式部分 -->
+  <view class="select-item">
+    <text class="label">联系方式</text>
+    <view class="contact-section">
+      <input class="book-input price-input" type="text" value="{{contactInfo}}" bindinput="onContactInfoInput" placeholder="联系电话" />
+      <input class="book-input price-input" type="text" value="{{studentId}}" bindinput="onStudentIdInput" placeholder="学号" />
+
+      <!-- 添加平台托管选项 -->
+      <view class="notes-checkbox">
+        <checkbox-group bindchange="onPlatformHostingChange">
+          <checkbox value="needPlatformHosting" class="notes-checkbox-item">是否需要平台托管</checkbox>
+          <image src="/images/help.png" style="width: 36rpx; height: 36rpx; vertical-align: middle; margin-left: 10rpx;" bindtap="showHostingTip"/>
+        </checkbox-group>
+      </view>
+    </view>
+  </view>
+  <button class="submit-btn" bindtap="onSubmit">发布</button>
+</view>

@@ -1,0 +1,144 @@
+/* pages/index/sort/sort.wxss */
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: #f7f7f7;
+}
+
+/* 顶部学校tab */
+.school-tabs {
+  white-space: nowrap;
+  background: #fff;
+  padding: 20rpx;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+}
+
+.school-tab {
+  display: inline-block;
+  width: 25%;
+  text-align: center;
+  font-size: 28rpx;
+  position: relative;
+}
+
+.school-tab.active {
+  font-weight: bold;
+  z-index: 1;
+}
+
+.school-tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80rpx;
+  height: 18rpx;
+  opacity: 0.7;
+  background: #07c160;
+  border-radius: 5rpx;
+  z-index: -1;
+}
+
+/* 内容区域 */
+.content-wrapper {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+/* 左侧菜单 */
+.left-menu {
+  width: 200rpx;
+  background: #f7f7f7;
+  height: 100%;
+  overflow-y: auto;
+  border-right: 1px solid #ddd;
+}
+
+.college-item {
+  padding: 30rpx 20rpx;
+  font-size: 28rpx;
+  color: #333;
+  text-align: center;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+
+.college-item.active {
+  background: #fff;
+  position: relative;
+  color: #07c160;
+}
+
+.college-item.active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8rpx;
+  height: 32rpx;
+  background: #07c160;
+  border-radius: 4rpx;
+}
+
+/* 右侧内容 */
+.right-content {
+  flex: 1;
+  background: #fff;
+}
+
+.major-grid {
+  height: 100%;
+}
+
+.major-title {
+  font-size: 30rpx;
+  color: #333;
+  background: #f7f7f7;
+  border-radius: 12rpx;
+  padding: 20rpx;
+  font-weight: 500;
+  margin: 20rpx;
+}
+
+.major-item {
+  font-size: 28rpx;
+  color: #333;
+  -webkit-line-clamp: 1;
+  margin-bottom: 10rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+.major-item-line {
+  font-size: 24rpx;
+  color: #999;
+  width: calc(33.33% - 20rpx);
+  padding: 0 10rpx;
+  margin: 10rpx;
+  border-radius: 10rpx;
+  border: 1px solid #999;
+  display: inline-block;
+  text-align: center;
+  justify-content: center;
+  box-sizing: border-box;
+  background-color: #fff;
+  cursor: default;
+}
+
+/* 隐藏滚动条 */
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}

@@ -1,0 +1,7 @@
+<view class="container">
+  <view class="title">我的收藏</view>
+  <show-item books="{{list}}" />
+  <view class="empty-tip" wx:if="{{list.length === 0}}">
+    <text>暂无收藏</text>
+  </view>
+</view>

@@ -1,0 +1,78 @@
+<!-- 图书基本信息 -->
+<view class="book-image-container">
+  <image class="book-image" src="{{bookInfo.image_url}}" mode="aspectFit"></image>
+</view>
+<view class="info-content">
+  <view class="book-price" wx:if="{{bookInfo.book_price > 0}}">¥{{bookInfo.book_price}}</view>
+  <view class="book-no" wx:else>暂无报价</view>
+  <view class="book-title">{{bookInfo.book_name}}</view>
+  <view class="book-author">作者：{{bookInfo.book_author}}</view>
+  <view class="book-author">版次：{{bookInfo.book_edition}}</view>
+  <view class="book-isbn">ISBN：{{bookInfo.book_isbn}}</view>
+</view>
+
+<!-- 书籍详情 -->
+<view class="book-detail">
+  <view class="detail-title">书籍详情</view>
+  <view class="detail-item">
+    <text class="label">课程名称：</text>
+    <text class="value">{{bookInfo.course}}</text>
+  </view>
+  <view class="detail-item">
+    <text class="label">课程编号：</text>
+    <text class="value">{{bookInfo.course_id}}</text>
+  </view>
+  <view class="detail-item">
+    <text class="label">开课学院：</text>
+    <text class="value">{{bookInfo.college}}</text>
+  </view>
+  <view class="detail-item">
+    <text class="label">课程性质：</text>
+    <text class="value">{{bookInfo.course_kind}}</text>
+  </view>
+  <view class="detail-item">
+    <text class="label">适用班级：</text>
+    <text class="value">{{bookInfo.zy}}</text>
+  </view>
+</view>
+
+<!-- 书籍详情 -->
+<view class="book-detail">
+  <view class="detail-title">有谁在卖</view>
+  <block wx:if="{{sellingList.length > 0}}">
+    <view class="selling-item" wx:for="{{sellingList}}" wx:key="index">
+      <view class="seller-info" data-item="{{item}}" bindtap="goToSellerinfoPage">
+        <view class="book-img-wrapper">
+          <image class="book-img" src="{{item.image_url[0]}}" mode="aspectFill"></image>
+        </view>
+        <view class="seller-detail">
+          <view class="seller-name">{{item.needPlatformHosting ? '平台托管' : '卖家自卖'}}</view>
+          <view class="selling-price">¥{{item.book_price}}</view>
+        </view>
+      </view>
+    </view>
+  </block>
+  <view class="no-seller" wx:else>
+    <text>暂时还没有人在卖这本书</text>
+  </view>
+</view>
+
+<view class="action-container">
+  <view class="favorite-container" bindtap="addToCart">
+    <image wx:if="{{isCart}}" class="favorite-icon" src="/images/cart-active.png" mode="aspectFit"></image>
+    <image wx:else class="favorite-icon" src="/images/cart.png" mode="aspectFit"></image>
+    <text wx:if="{{isCart}}" class="favorite-text">已加入购物车</text>
+    <text wx:else class="favorite-text">加入购物车</text>
+  </view>
+  <view class="favorite-container" bindtap="toggleFavorite">
+    <image wx:if="{{isFavorite}}" class="favorite-icon" src="/images/favorite.png" mode="aspectFit"></image>
+    <image wx:else class="favorite-icon" src="/images/unfavorite.png" mode="aspectFit"></image>
+    <text wx:if="{{isFavorite}}" class="favorite-text">已收藏</text>
+    <text wx:else class="favorite-text">收藏</text>
+  </view>
+</view>
+
+
+
+
+

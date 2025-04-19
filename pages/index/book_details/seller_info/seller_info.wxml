@@ -1,0 +1,31 @@
+<view class="seller-container">
+  <!-- 当前售卖的书籍信息 -->
+  <view class="book-info">
+    <view class="section-title">书籍详情</view>
+    <!-- 添加书籍图片 -->
+    <view class="book-image">
+      <swiper class="image-swiper" indicator-dots="true" autoplay="false">
+        <swiper-item wx:for="{{bookInfo.image_url}}" wx:key="index">
+          <image src="{{item}}" mode="aspectFit"></image>
+        </swiper-item>
+      </swiper>
+    </view>
+    <view class="book-details">
+      <view class="detail-item">
+        <text class="label">售价：</text>
+        <text class="value price">¥{{bookInfo.book_price}}</text>
+      </view>
+      <view class="detail-item description">
+        <text class="label">平台托管：</text>
+        <text class="value">{{bookInfo.needPlatformHosting ? '是' : '否'}}</text>
+        <image class="help-icon" src="/images/help.png" mode="aspectFit" bindtap="showHelp"></image>
+      </view>
+    </view>
+  </view>
+
+  <!-- 添加底部按钮 -->
+  <view class="bottom-buttons">
+    <button class="btn contact" bindtap="contactSeller">联系卖家</button>
+    <button class="btn buy" bindtap="buyNow">立即购买</button>
+  </view>
+</view>
