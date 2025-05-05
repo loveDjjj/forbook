@@ -1,0 +1,51 @@
+<view wx:for="{{list}}" wx:key="index" class="address-item">
+  <view class="status-tag-container">
+    <view class="status-tag-text">{{item.sellerid}}</view>
+    <view class="status-tag">
+      {{item.status === 'waitSend' ? '待发货' : 
+            item.status === 'waitReceive' ? '待收货' : 
+            item.status === 'received' ? buyorsell === 1 ? '待结算' : '交易成功' : 
+            item.status === 'ok' ? buyorsell === 1 ? '已打款,交易成功' : '交易成功' : 
+            item.status === 'canceling' ? '退款中' : 
+            item.status === 'selling' ? '在售' : 
+            item.status === 'refunded' ? '交易关闭' : 
+            item.status === 'waitPickup' ? '待取件' : 
+            item.status === 'selled' ? '已售出' : 
+            item.status === 'waitIn' ? '待入库' : 
+            item.status === 'in' ? '在库' : ''}}
+    </view>
+  </view>
+
+  <view class="item-container">
+    <view class="book-image-container">
+      <image src="{{item.image_url[0]}}" mode="aspectFit" class="book-img"></image>
+    </view>
+    <view class="right-content">
+      <view class="title-price-row">
+        <text class="book-title">{{item.book_name}}</text>
+        <text class="book-price">¥{{item.book_price}}</text>
+      </view>
+      <view class="book-info-left">
+        <view class="book-condition">{{item.book_author}}</view>
+        <view class="book-condition">{{item.book_isbn}}</view>
+        <view class="book-condition">{{item.needPlatformHosting ? '平台托管' : '自己保管'}}</view>
+
+      </view>
+      <view class="item-bottom-container">
+        <button class="item-bottom botton1" wx:if="{{buyorsell === 2}}" bindtap="goToChat" data-item="{{item}}">联系卖家</button>
+        <button class="item-bottom botton1" wx:if="{{buyorsell === 1}}" bindtap="goToChat" data-item="{{item}}">联系买家</button>
+        <button class="item-bottom botton3" wx:if="{{buyorsell === 2 && item.status === 'waitSend'}}"
+        bindtap="askCancel" data-item="{{item}}">申请退款</button>
+        <button class="item-bottom botton3" wx:if="{{buyorsell === 1 && item.status === 'canceling'}}"
+        bindtap="confirmCancel" data-item="{{item}}">确认退款</button>
+        <button class="item-bottom botton2" wx:if="{{buyorsell === 1 && item.status === 'waitSend'}}"
+        bindtap="confirmSend" data-item="{{item}}">确认发货</button>
+        <button class="item-bottom botton2" wx:if="{{buyorsell === 2 && item.status === 'waitReceive'}}"
+        bindtap="confirmReceive" data-item="{{item}}">确认收货</button>
+        <button class="item-bottom botton2" wx:if="{{buyorsell === 2 && item.status === 'canceled'}}"
+        bindtap="buyAgain" data-item="{{item}}">再次购买</button>
+      </view>
+    </view>
+  </view>
+
+</view>

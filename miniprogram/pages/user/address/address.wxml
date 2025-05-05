@@ -1,0 +1,63 @@
+<view class="container">
+  <view class="title">我的地址</view>
+  
+  <!-- 地址列表 -->
+  <view class="address-list" wx:if="{{list.length > 0}}">
+    <view class="address-item" wx:for="{{list}}" wx:key="_id">
+      <view class="address-header">
+        <view class="address-title">地址{{index + 1}}</view>
+        <view class="operation-btns">
+          <view class="edit-btn" bindtap="editAddress" data-index="{{index}}">编辑</view>
+          <view class="delete-btn" bindtap="removeAddress" data-index="{{index}}">删除</view>
+        </view>
+      </view>
+      <view class="address-info">
+        <view class="info-row">
+          <text class="label">昵称：</text>
+          <text class="content">{{item.nickname}}</text>
+        </view>
+        <view class="info-row">
+          <text class="label">地址：</text>
+          <text class="content">{{item.address}}</text>
+        </view>
+        <view class="info-row">
+          <text class="label">联系方式：</text>
+          <text class="content">{{item.phone}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+  <view class="empty-tip" wx:if="{{list.length === 0}}">
+    <text>暂无地址</text>
+  </view>
+</view>
+
+<!-- 添加地址按钮 -->
+<view class="add-address" bindtap="AddAddress">
+  <view class="add-btn">
+    <image src="/images/add.png"></image>
+    <text>添加新地址</text>
+  </view>
+</view>
+
+<!-- 悬浮编辑框 -->
+<view class="modal" wx:if="{{showModal}}">
+  <view class="modal-mask" bindtap="hideModal"></view>
+  <view class="modal-content">
+    <view class="modal-title">{{isEditing ? '编辑地址' : '添加地址'}}</view>
+    <view class="input-group">
+      <input type="text" placeholder="请输入昵称" model:value="{{nickname}}" />
+    </view>
+    <view class="input-group">
+      <input type="text" placeholder="请输入地址" model:value="{{address}}" />
+    </view>
+    <view class="input-group">
+      <input type="text" placeholder="请输入联系方式" model:value="{{phone}}" />
+    </view>
+    <view class="modal-btns">
+      <button class="btn cancel" bindtap="cancel">取消</button>
+      <button class="btn confirm" bindtap="confirm">确定</button>
+    </view>
+  </view>
+</view>

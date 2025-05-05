@@ -1,0 +1,76 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/index/book_details/book_details",
+    "pages/index/book_details/AI/AI",
+    "pages/index/search/search",
+    "pages/index/sort/sort",
+    "pages/index/sort/sort_result/sort_result",
+    "pages/index/search/search_result/search_result",
+    "pages/index/book_details/seller_info/seller_info",
+    "pages/sell/sell",
+    "pages/chat/chat",
+    "pages/chat/message/message",
+    "pages/cart/cart",
+    "pages/cart/cart_details/cart_details",
+    "pages/user/user",
+    "pages/user/userItem/userItem",
+    "pages/user/favorite/favorite",
+    "pages/user/address/address",
+    "pages/user/userItem/selling_edit/selling_edit",
+    "components/order-item/order-item",
+    "components/publish-item/publish-item",
+    "components/isbn-input/isbn-input"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "ForBook",
+    "backgroundColor": "#F8F8F8",
+    "backgroundTextStyle": "light"
+  },
+  "tabBar": {
+    "color": "#575b66",
+    "selectedColor": "#000000", 
+    "backgroundColor": "#FFFFFF",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "主页",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home-active.png"
+      },
+      {
+        "pagePath": "pages/sell/sell", 
+        "text": "发布",
+        "iconPath": "images/sell.png",
+        "selectedIconPath": "images/sell-active.png"
+      },
+      {
+        "pagePath": "pages/chat/chat",
+        "text": "消息",
+        "iconPath": "images/chat.png",
+        "selectedIconPath": "images/chat-active.png"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "text": "购物车", 
+        "iconPath": "images/cart.png",
+        "selectedIconPath": "images/cart-active.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "个人",
+        "iconPath": "images/user.png",
+        "selectedIconPath": "images/user-active.png"
+      }
+    ]
+  },
+  "usingComponents": {
+    "lazy-image": "/components/lazy-image/lazy-image",
+    "order-item": "/components/order-item/order-item",
+    "publish-item": "/components/publish-item/publish-item",
+    "show-item": "/components/show-item/show-item"
+  }
+}

@@ -1,0 +1,282 @@
+.product-display {
+  display: flex;
+  flex-direction: column;
+  padding: 20rpx;
+  background-color: #f8f8f8;
+  border-radius: 10rpx;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.1);
+  height: 150rpx;
+}
+
+.product-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.product-image {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 10rpx;
+  margin-right: 20rpx;
+}
+
+.info-right {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.product-name {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  margin-right: 20rpx;
+}
+
+.product-price {
+  font-size: 28rpx;
+  color: #e60012;
+}
+
+.detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 10rpx;
+}
+
+.detail-text {
+  font-size: 24rpx;
+  color: #666;
+  margin-bottom: 5rpx;
+}
+
+.message-page {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 190rpx);
+}
+
+.message-list {
+  flex: 1;
+  overflow-y: auto;
+  padding-bottom: 120rpx;
+}
+
+.message-item {
+  margin-bottom: 20rpx;
+}
+
+.message-wrapper {
+  display: flex;
+  align-items: flex-start;
+}
+
+.avatar {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
+
+.avatar-mine {
+  margin-right: 0rpx;
+}
+
+.avatar-other {
+  margin-left: 0rpx;
+}
+
+.message-content {
+  max-width: 60%;
+  padding: 20rpx;
+  margin: 0 20rpx;
+  border-radius: 10rpx;
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: pre-wrap;
+  line-height: 1.4;
+}
+
+.message-content-mine {
+  background-color: #007AFF;
+  color: white;
+}
+
+.message-content-other {
+  background-color: #E8E8E8;
+  color: #333;
+}
+
+.message-mine {
+  margin: 20rpx;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.message-other {
+  margin: 20rpx;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.message-input {
+  display: flex;
+  padding: 20rpx;
+  background-color: #F5F5F5;
+  border-top: 1rpx solid #E8E8E8;
+}
+
+.message-input-field {
+  flex: 1;
+  height: 80rpx;
+  padding: 0 20rpx;
+  background-color: white;
+  border-radius: 40rpx;
+  margin-right: 20rpx;
+}
+
+.send-btn {
+  width: 120rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  background-color: #007AFF;
+  color: white;
+  border-radius: 40rpx;
+  font-size: 28rpx;
+  padding: 0;
+}
+
+
+.message-text {
+  display: inline-block;
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: pre-wrap;
+}
+
+.message-input-area {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #F5F5F5;
+  border-top: 1rpx solid #E8E8E8;
+  z-index: 99;
+}
+
+.message-toolbar {
+  display: flex;
+  align-items: center;
+  padding: 20rpx;
+}
+
+.toolbar-item {
+  width: 60rpx;
+  height: 60rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40rpx;
+  color: #666;
+  margin-right: 20rpx;
+}
+
+.message-input-field {
+  flex: 1;
+  height: 80rpx;
+  padding: 0 20rpx;
+  background-color: white;
+  border-radius: 40rpx;
+  margin-right: 20rpx;
+}
+
+.toolbox {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  background: #fff;
+  padding: 30rpx;
+  display: flex;
+  transform: translateY(100%);
+  opacity: 0;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  box-shadow: 0 -2rpx 10rpx rgba(0,0,0,0.1);
+  z-index: 101;
+}
+
+.toolbox.toolbox-show {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.toolbox-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 40rpx;
+}
+
+.toolbox-icon {
+  width: 100rpx;
+  height: 100rpx;
+  background: #f5f5f5;
+  border-radius: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40rpx;
+  margin-bottom: 10rpx;
+}
+
+.toolbox-text {
+  font-size: 24rpx;
+  color: #666;
+}
+
+.toolbox-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+  pointer-events: none;
+  z-index: 100;
+}
+
+.toolbox-mask.mask-show {
+  pointer-events: auto;
+}
+
+/* 添加图片消息样式 */
+.message-image {
+  max-width: 400rpx;
+  border-radius: 8rpx;
+}
+
+/* 调整图片消息的容器样式 */
+.message-content-mine .message-image,
+.message-content-other .message-image {
+  background: transparent;
+  padding: 0;
+  overflow: hidden;
+}

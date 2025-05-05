@@ -1,0 +1,232 @@
+/* pages/index/AI/AI.wxss */
+
+/* 聊天容器 */
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #f6f6f6;
+}
+
+/* 聊天记录列表 */
+.chat-list {
+  flex: 1;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+
+/* 加载更多 */
+.loading-more {
+  text-align: center;
+  padding: 20rpx;
+  color: #999;
+  font-size: 24rpx;
+}
+
+/* 消息项 */
+.message-item {
+  display: flex;
+  margin-bottom: 30rpx;
+  position: relative;
+}
+
+/* 用户消息 */
+.user-message {
+  flex-direction: row-reverse;
+}
+
+/* 头像 */
+.avatar {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.avatar image {
+  width: 100%;
+  height: 100%;
+}
+
+/* 消息内容 */
+.message-content {
+  max-width: 70%;
+  margin: 0 20rpx;
+}
+
+/* 机器人消息文本 */
+.bot-message .message-text {
+  background-color: #fff;
+  border-radius: 20rpx;
+  padding: 20rpx;
+  font-size: 28rpx;
+  line-height: 1.5;
+  color: #333;
+  position: relative;
+  box-shadow: 0 2rpx 6rpx rgba(0, 0, 0, 0.05);
+}
+
+/* 用户消息文本 */
+.user-message .message-text {
+  background-color: #07c160;
+  border-radius: 20rpx;
+  padding: 20rpx;
+  font-size: 28rpx;
+  line-height: 1.5;
+  color: #fff;
+  text-align: left;
+  position: relative;
+  box-shadow: 0 2rpx 6rpx rgba(0, 0, 0, 0.05);
+}
+
+/* 消息时间 */
+.message-time {
+  font-size: 22rpx;
+  color: #999;
+  margin-top: 10rpx;
+  display: flex;
+}
+
+.bot-message .message-time {
+  justify-content: flex-start;
+}
+
+.user-message .message-time {
+  justify-content: flex-end;
+}
+
+/* 反馈按钮 */
+.feedback-actions {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 10rpx;
+}
+
+.feedback-btn {
+  padding: 10rpx;
+  margin-right: 20rpx;
+}
+
+.feedback-icon {
+  width: 32rpx;
+  height: 32rpx;
+  opacity: 0.6;
+}
+
+/* 正在输入指示器 */
+.typing-indicator {
+  display: flex;
+  margin: 10rpx 0 10rpx 100rpx;
+}
+
+.typing-dot {
+  width: 16rpx;
+  height: 16rpx;
+  border-radius: 50%;
+  background-color: #ccc;
+  margin: 0 6rpx;
+  animation: typingAnimation 1.4s infinite;
+}
+
+.typing-dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes typingAnimation {
+  0% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.2); }
+  100% { opacity: 0.3; transform: scale(1); }
+}
+
+/* 推荐问题 */
+.recommend-questions {
+  white-space: nowrap;
+  padding: 20rpx 30rpx;
+  border-top: 1rpx solid #eee;
+  background: #fff;
+}
+
+.recommend-question-item {
+  display: inline-block;
+  background-color: #f1f1f1;
+  color: #333;
+  padding: 16rpx 30rpx;
+  margin-right: 20rpx;
+  border-radius: 30rpx;
+  font-size: 24rpx;
+  max-width: 400rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.recommend-question-item:active {
+  background-color: #e8e8e8;
+}
+
+/* 输入区域 */
+.input-area {
+  border-top: 1rpx solid #eee;
+  background-color: #fff;
+  padding: 20rpx 30rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* 消息输入框 */
+.message-input {
+  background-color: #f1f1f1;
+  border-radius: 10rpx;
+  padding: 20rpx;
+  font-size: 28rpx;
+  line-height: 1.5;
+  max-height: 180rpx;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* 操作按钮区域 */
+.action-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20rpx;
+}
+
+/* 上传按钮 */
+.upload-btn {
+  width: 60rpx;
+  height: 60rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.action-icon {
+  width: 44rpx;
+  height: 44rpx;
+  opacity: 0.7;
+}
+
+/* 发送按钮 */
+.send-btn {
+  background-color: #07c160;
+  color: #fff;
+  border-radius: 10rpx;
+  padding: 16rpx 40rpx;
+  font-size: 28rpx;
+  line-height: 1;
+  margin: 0;
+}
+
+.send-btn.disabled {
+  background-color: #ccc;
+  color: #fff;
+}

@@ -1,0 +1,116 @@
+page {
+  background: #f7f7f9;
+}
+
+/* 顶部搜索区域 */
+.top-container {
+display: flex;
+align-items: center;
+padding: 24rpx;
+background: #fff;
+gap: 24rpx;
+}
+
+.search-header {
+  display: flex;
+}
+
+.category-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 24rpx;
+  color: #333;
+  margin-right: 24rpx;
+}
+
+.category-icon {
+  width: 32rpx;
+  height: 32rpx;
+  margin-bottom: 4rpx;
+}
+.cate-text{
+  font-size: 20rpx;
+}
+
+.search-wrapper {
+  flex: 1;
+  height: 72rpx;
+  background: #f7f7f9;
+  border-radius: 36rpx;
+  display: flex;
+  align-items: center;
+  padding: 0 24rpx;
+  position: relative;
+}
+
+.scan-icon {
+  width: 36rpx;
+  height: 36rpx;
+}
+
+.search-button {
+  color: #43a756;
+  text-align: center;
+  align-items: center;
+  padding: 0 6rpx;
+  font-size: 29rpx;
+  font-weight: bold;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.search-input {
+  flex: 1;
+  margin: 0 20rpx;
+  font-size: 28rpx;
+  padding-right: 120rpx;
+}
+
+.placeholder-style {
+  color: #999;
+}
+
+.filter-bar {
+  display: flex;
+  background: #fff;
+  padding: 20rpx;
+  margin-bottom: 2rpx;
+}
+
+.filter-item {
+  flex: 1;
+  text-align: center;
+  font-size: 28rpx;
+  color: #666;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.filter-item.active {
+  color: #43a756;
+  font-weight: bold;
+}
+
+.sort-icon {
+  width: 24rpx;
+  height: 24rpx;
+  margin-left: 8rpx;
+}
+
+/* 书籍列表 */
+.book-list {
+  padding: 24rpx;
+  background-color: #fff;
+}
+
+.no-result {
+  text-align: center;
+  padding: 48rpx;
+  color: #999;
+  font-size: 28rpx;
+}
+

@@ -1,0 +1,13 @@
+<view class="special-book-list">
+    <view class="special-book-item" wx:for="{{books}}" wx:key="index" data-index="{{index}}" bindlongpress="deleteBook">
+      <image src="{{item.image_url[0]}}" mode="aspectFit" class="special-book-image"/>
+      <view class="special-book-right">
+        <view class="special-price-row">
+            <text class="special-book-title">{{item.book_name}}</text>
+            <text class="special-price">¥{{item.book_price}}</text>
+        </view>
+        <text class="special-book-author">{{item.book_author}}</text>
+        <text class="special-book-isbn">{{item.book_isbn}}</text>
+      </view>
+    </view>
+</view>

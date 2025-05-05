@@ -1,0 +1,4 @@
+{
+  "usingComponents": {"agent-ui":"/components/agent-ui/index"},
+  "navigationBarTitleText": "拾书吖"
+}

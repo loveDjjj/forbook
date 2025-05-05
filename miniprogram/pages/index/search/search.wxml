@@ -1,0 +1,17 @@
+<view class="top-container">
+  <view class="category-btn" bindtap="GoSortPage">
+    <image src="/images/layers.png" class="category-icon"></image>
+    <text class="cate-text">分类</text>
+  </view>
+  <view class="search-wrapper">
+    <image src="/images/search.png" class="scan-icon"></image>
+    <input type="text" bindinput="onSearchInput" value="{{searchKeyword}}" placeholder="书名/作者/ISBN/课程名称" placeholder-class="placeholder-style" class="search-input" focus="{{true}}"/>
+  </view>
+  <button bindtap="GoSearchResultPage" class="search-button">搜索</button>
+</view>
+<view class="search-hot">
+  <view class="hot-title">热门搜索</view>
+  <view wx:for="{{hotSearchList}}" wx:key="index" class="hot-item" data-keyword="{{item}}" bindtap="GoSearchResultPage">
+    <text>{{item}}</text>
+  </view>
+</view>

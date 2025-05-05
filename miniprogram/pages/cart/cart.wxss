@@ -1,0 +1,81 @@
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30rpx;
+  background-color: #fff;
+  border-bottom: 1rpx solid #eee;
+}
+
+.title{
+  font-size: 14px;
+  color: #3D3D3D;
+}
+
+.title-text{
+  margin: 0 15rpx;
+}
+
+.num{
+  color: red;
+}
+
+.item-list {
+  padding-bottom: 150rpx;
+  width: 100vw;
+}
+
+.item-card-container{
+  overflow: hidden;
+  margin: 20rpx 20rpx 20rpx 20rpx;
+  border-radius: 28rpx;
+  background-color: #fff;
+}
+
+.item-card {
+  display: flex;
+  padding: 25rpx 10rpx;
+  background-color: white;
+  border-radius: 28rpx;
+  margin: 0 20rpx;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.item-card:active {
+  transform: translateY(-2rpx) scale(0.95);
+}
+
+.item-image {
+  width: 150rpx;
+  height: 150rpx;
+  margin-right: 25rpx;
+  border-radius: 24rpx;
+}
+
+.item-info {
+  flex: 1;
+  font-size: 14px;
+}
+
+.name {
+  margin-bottom: 15rpx;
+  display: block;
+}
+
+.price-container{
+  display: flex;
+  align-items: center;
+}
+
+.price{
+  font-size: 28rpx;
+  margin:15rpx 0;
+  color: red;
+}
+
+.edit{
+  width: 50rpx;
+  height: 50rpx;
+  margin-left: 60rpx;
+}

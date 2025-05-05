@@ -1,0 +1,236 @@
+page {
+  background: #f7f7f9;
+  padding-bottom: 100rpx;
+}
+
+/* 图书信息 */
+.book-image-container {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  background: #fff;
+  border-radius: 50rpx;
+  margin-bottom: 24rpx;
+}
+
+.book-image {
+  width: 320rpx;
+  height: 400rpx;
+  border-radius: 12rpx;
+}
+
+.info-content {
+  background: #fff;
+  margin: 0 24rpx;
+  padding: 24rpx;
+  border-radius: 24rpx;
+}
+
+.book-price {
+  font-size: 48rpx;
+  color: #ff4d4f;
+  font-weight: bold;
+  margin-bottom: 24rpx;
+}
+
+.book-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 24rpx;
+}
+
+.book-author, .book-isbn {
+  font-size: 24rpx;
+  color: #666;
+  margin-bottom: 12rpx;
+}
+
+.current-price {
+  font-size: 48rpx;
+  color: #ff4d4f;
+  font-weight: bold;
+  margin-right: 16rpx;
+}
+
+.original-price {
+  font-size: 24rpx;
+  color: #999;
+  text-decoration: line-through;
+}
+
+.book-no {
+  font-size: 44rpx;
+  color: #ff4d4f;
+  font-weight: bold;
+  margin-bottom: 24rpx;
+}
+
+/* 书籍详情 */
+.book-detail {
+  background: #fff;
+  border-radius: 24rpx;
+  padding: 24rpx;
+  margin: 24rpx;
+}
+
+.detail-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #43a756;
+  border-left: 3px solid #43a756;
+  padding: 12rpx;
+  margin-right: auto;
+  margin-bottom: 24rpx;
+}
+
+.detail-item {
+  display: flex;
+  margin-bottom: 16rpx;
+  align-items: flex-start;
+  padding-top: 4rpx;
+}
+
+.detail-item .label {
+  width: 160rpx;
+  font-size: 28rpx;
+  color: #666;
+  flex-shrink: 0;
+}
+
+.detail-item .value {
+  flex: 1;
+  font-size: 28rpx;
+  color: #333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 有谁在卖样式 */
+.selling-item {
+  background: #fff;
+  padding: 20rpx;
+  margin: 20rpx 0;
+  border-radius: 12rpx;
+}
+
+.seller-info {
+  display: flex;
+  align-items: center;
+}
+
+.book-img-wrapper {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 8rpx;
+  margin-right: 20rpx;
+}
+
+.book-img {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 8rpx;
+}
+
+.seller-detail {
+  flex: 1;
+  min-width: 0;
+}
+
+.seller-name {
+  font-size: 28rpx;
+  color: #333;
+  margin-bottom: 12rpx;
+}
+
+.book-condition {
+  font-size: 24rpx;
+  color: #666;
+  margin-bottom: 4rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 400rpx;
+}
+
+.selling-price {
+  font-size: 32rpx;
+  color: #e4393c;
+  font-weight: bold;
+}
+
+.no-seller {
+  text-align: center;
+  padding: 40rpx;
+  color: #999;
+  font-size: 28rpx;
+}
+
+/* 底部框 */
+.action-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 100rpx;
+  background-color: #fff;
+  border-top: 1rpx solid #e5e5e5;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 20rpx;
+}
+
+.favorite-container {
+  width: 160rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-right: 40rpx;
+}
+
+.favorite-icon {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.favorite-text {
+  font-size: 24rpx;
+  color: #666;
+}
+
+/* AI悬浮按钮样式 */
+.ai-floating-btn {
+  position: fixed;
+  top: 50%;  /* 放在屏幕中部 */
+  right: 30rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #2491f7, #07c160);
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.15);
+  z-index: 999;
+  transform: translateY(-50%);  /* 垂直居中调整 */
+  padding: 0;
+}
+
+.ai-icon {
+  width: 70rpx;
+  height: 70rpx;
+}
+
+.ai-text {
+  display: none;  /* 隐藏文字 */
+}
+
+.ai-floating-btn:active {
+  transform: translateY(-50%) scale(0.9);  /* 保持垂直居中的同时添加点击效果 */
+  opacity: 0.8;
+}
+
+

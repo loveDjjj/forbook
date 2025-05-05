@@ -1,0 +1,9 @@
+<image 
+  lazy-load="{{true}}"
+  src="{{currentSrc}}"
+  mode="{{mode}}"
+  class="lazy-image custom-class {{className}}"
+  style="{{style}}"
+  bind:load="onImageLoad"
+  bind:error="onImageError"
+/> 

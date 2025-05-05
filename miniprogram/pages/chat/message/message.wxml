@@ -1,0 +1,77 @@
+<view class="product-display" bindtap="showProductDetail">
+    <view class="product-wrapper">
+      <image class="product-image" src="{{item.image_url[0]}}" mode="aspectFill"></image>
+      <view class="info-right">
+        <view class="product-info">
+          <text class="product-name">{{item.book_name}}</text>
+          <text class="product-price">￥{{item.book_price}}</text>
+        </view>
+        <view class='detail'>
+          <text class='detail-text'>ISBN:{{item.book_isbn}}</text>
+          <text class='detail-text'>{{item.condition}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+<view class="message-page">
+  <scroll-view class="message-list" scroll-y="true" id="message-list" enhanced="true">
+    <block wx:for="{{messages}}" wx:key="index" class="message-block">
+      <view class="message-wrapper">
+        <!-- 自己的头像和消息 -->
+        <view wx:if="{{item.from === myId}}" class="message-mine">
+          <view class="message-content message-content-mine">
+            <!-- 根据消息类型显示不同内容 -->
+            <block wx:if="{{item.type === 'image'}}">
+              <image class="message-image" src="{{item.content}}" mode="widthFix" bindtap="previewImage" data-url="{{item.content}}"></image>
+            </block>
+            <block wx:else>
+              <text class="message-text">{{item.content}}</text>
+            </block>
+          </view>
+          <image class="avatar avatar-mine" src="cloud://tx-5gi1emj7c6a1ff3f.7478-tx-5gi1emj7c6a1ff3f-1317385835/avatarUrl/{{item.from}}.png" mode="aspectFill">
+          </image>
+        </view>
+
+        <!-- 对方的消息和头像 -->
+        <view wx:else class="message-other">
+          <image class="avatar avatar-other" src="cloud://tx-5gi1emj7c6a1ff3f.7478-tx-5gi1emj7c6a1ff3f-1317385835/avatarUrl/{{item.from}}.png" mode="aspectFill">
+          </image>
+          <view class="message-content message-content-other">
+            <block wx:if="{{item.type === 'image'}}">
+              <lazy-image custom-class="message-image" src="{{item.content}}" mode="widthFix" bindtap="previewImage" data-url="{{item.content}}"/>
+            </block>
+            <block wx:else>
+              <text class="message-text">{{item.content}}</text>
+            </block>
+          </view>
+        </view>
+      </view>
+    </block>
+  </scroll-view>
+
+  <view class="message-input-area">
+    <view class="toolbox-mask {{showToolbox ? 'mask-show' : ''}}" bindtap="hideToolbox"></view>
+
+    <view class="message-toolbar">
+      <view class="toolbar-item" bindtap="toggleToolbox">
+        <text class="iconfont">+</text>
+      </view>
+      <input class="message-input-field" type="text" value="{{inputValue}}" placeholder="输入消息" bindinput="onInputChange" confirm-type="send" bindconfirm="sendMessage" />
+      <button class="send-btn" bindtap="sendMessage">发送</button>
+    </view>
+
+    <!-- 工具箱面板 -->
+    <view class="toolbox {{showToolbox ? 'toolbox-show' : ''}}">
+      <view class="toolbox-item" bindtap="chooseImage" data-source="camera">
+        <view class="toolbox-icon">📸</view>
+        <view class="toolbox-text">拍照</view>
+      </view>
+      <view class="toolbox-item" bindtap="chooseImage" data-source="album">
+        <view class="toolbox-icon">🖼️</view>
+        <view class="toolbox-text">相册</view>
+      </view>
+    </view>
+  </view>
+</view>

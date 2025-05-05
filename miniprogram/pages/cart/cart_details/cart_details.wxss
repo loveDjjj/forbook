@@ -1,0 +1,237 @@
+.order-page {
+  padding: 2.5vw;
+  background: #f8f9fc;
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* 地址样式 */
+
+.address-section {
+  background: #fff;
+  padding: 3.5vw;
+  border-radius: 3vw;
+  margin-bottom: 1vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 0.3vh 2vh rgba(0,0,0,0.06);
+}
+
+.address-info {
+  flex: 1;
+}
+
+.user-info {
+  margin-bottom: 0.6vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  font-size: 3.4vw;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 0.6vh;
+}
+
+.phone {
+  color: #7f8c8d;
+  font-size: 3vw;
+}
+
+.detail-address {
+  color: #34495e;
+  font-size: 3vw;
+  line-height: 3.5vh;
+}
+
+.no-address {
+  color: #95a5a6;
+  font-size: 3.2vw;
+  text-align: center;
+  padding: 2vh 0;
+}
+
+.arrow {
+  width: 3.8vw;
+  height: 3.8vh;
+  position: absolute;
+  right: 3vw;
+  opacity: 0.5;
+  transition: all 0.3s ease;
+}
+
+/* 订单页面整体样式 */
+.order-page {
+  background: linear-gradient(180deg, #f8f9fc 0%, #fff 100%);
+  min-height: 100vh;
+  padding: 1.5vh 2.5vw;
+}
+
+/* 商品列表样式优化 */
+.order-list {
+  max-height: 55vh;
+  margin: 0.8vh 0;
+}
+
+.order-item {
+  background: #fff;
+  border-radius: 2.5vw;
+  padding: 2vh 3vw;
+  margin-bottom: 0.8vh;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 0.2vh 1.5vh rgba(0,0,0,0.04);
+}
+
+.item-image {
+  width: 16vw;
+  height: 16vw;
+  border-radius: 1.5vw;
+  margin-right: 2.5vw;
+  object-fit: cover;
+  box-shadow: 0 0.2vh 1vh rgba(0,0,0,0.08);
+}
+
+.item-info {
+  flex: 1;
+}
+
+.item-info .name {
+  font-size: 3.2vw;
+  color: #2c3e50;
+  font-weight: 500;
+  margin-bottom: 0.8vh;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.item-info .course {
+  font-size: 3vw;
+  color: #7f8c8d;
+  margin-bottom: 0.8vh;
+}
+
+.price-num {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price {
+  color: #e74c3c;
+  font-size: 3.4vw;
+  font-weight: 600;
+}
+
+.num {
+  color: #95a5a6;
+  font-size: 3vw;
+}
+
+/* 价格详情样式 */
+.price-detail {
+  background: #fff;
+  border-radius: 3vw;
+  padding: 2.5vh 3.5vw;
+  margin-bottom: 1.5vh;
+  box-shadow: 0 0.3vh 2vh rgba(0,0,0,0.06);
+}
+
+.price-item {
+  display: flex;
+  justify-content: space-between;
+  margin: 1vh 0;
+  font-size: 3vw;
+  color: #7f8c8d;
+}
+
+.total {
+  border-top: 1px solid #ecf0f1;
+  padding-top: 1.5vh;
+  margin-top: 1.5vh;
+}
+
+.final-price {
+  color: #e74c3c;
+  font-size: 3.8vw;
+  font-weight: 600;
+}
+
+/* 备注样式 */
+.remark-section {
+  background: #fff;
+  margin-bottom: 8vh;
+  border-radius: 3vw;
+  padding: 2.5vh 3vw;
+  box-shadow: 0 0.3vh 2vh rgba(0,0,0,0.06);
+  min-height: fit-content;
+  height: auto;
+  overflow: hidden;
+}
+
+.remark-title {
+  font-size: 3vw;
+  color: #2c3e50;
+  margin-bottom: 1vh;
+  display: block;
+  font-weight: 500;
+}
+
+.remark-input {
+  width: 100%;
+  height: 10vh;
+  font-size: 3vw;
+  padding: 2.5vw;
+  box-sizing: border-box;
+  background: #f8f9fc;
+  border-radius: 2vw;
+  color: #34495e;
+  border: 1px solid #ecf0f1;
+  transition: all 0.3s ease;
+}
+
+.remark-input:focus {
+  border-color: #bdc3c7;
+  box-shadow: 0 0 0 2px rgba(52,73,94,0.1);
+}
+
+/* 提交订单栏 */
+.submit-section {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 8vh;
+  background: rgba(255,255,255,0.95);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 4vw;
+  box-shadow: 0 -0.3vh 2vh rgba(0,0,0,0.08);
+  backdrop-filter: blur(15px);
+}
+
+.submit-btn {
+  width: 30vw;
+  height: 6vh;
+  line-height: 6vh;
+  text-align: center;
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+  color: #fff;
+  border-radius: 3vh;
+  font-size: 3.2vw;
+  font-weight: 500;
+  margin: 0;
+  box-shadow: 0 0.4vh 1.5vh rgba(231,76,60,0.25);
+  transition: all 0.3s ease;
+}
+
+.submit-btn:active {
+  transform: scale(0.95);
+  opacity: 0.9;
+  background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%);
+}

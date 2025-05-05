@@ -1,0 +1,61 @@
+<view class="order-page">
+  <!-- 收货地址 -->
+  <view class="address-section" bindtap="chooseAddress">
+    <view class="address-info" wx:if="{{detail.nickname}}">
+      <view class="user-info">
+        <text class="name">姓名：{{detail.nickname}}</text>
+        <text class="phone">地址：{{detail.address}}</text>
+      </view>
+    </view>
+    <view class="no-address" wx:else>
+      <text>请选择收货地址</text>
+    </view>
+    <image class="arrow" mode="aspectFit" src="/images/cart.png" />
+  </view>
+
+  <!-- 订单商品列表 -->
+  <scroll-view class="order-list" scroll-y="true">
+    <view class="order-item" wx:for="{{orderItems}}" wx:key="index">
+      <image class="item-image" src="{{item.image_url}}" mode="aspectFit"/>
+      <view class="item-info">
+        <text class="name">{{item.book_name}}</text>
+        <view class="price-num">
+          <text class="price">￥{{item.book_price}}</text>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+
+  <!-- 价格详情 -->
+  <view class="price-detail">
+    <view class="price-item">
+      <text>商品总价</text>
+      <text>￥{{totalPrice || '0.00'}}</text>
+    </view>
+    <view class="price-item">
+      <text>优惠金额</text>
+      <text>-￥{{discount || '0.00'}}</text>
+    </view>
+    <view class="price-item total">
+      <text>实付金额</text>
+      <text class="final-price">￥{{finalPrice || '0.00'}}</text>
+    </view>
+  </view>
+
+  <!-- 备注 -->
+  <view class="remark-section">
+    <text class="remark-title">备注</text>
+    <textarea class="remark-input" placeholder="请输入备注信息（选填）" model:value="{{remark}}"/>
+  </view>
+
+  <!-- 提交订单按钮 -->
+  <view class="submit-section">
+    <button class="submit-btn" bindtap="submitOrder">提交订单</button>
+  </view>
+</view>
+
+
+
+
+
+

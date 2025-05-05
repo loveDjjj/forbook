@@ -1,0 +1,21 @@
+
+<view class="book-list"  wx:if="{{booklist.length > 0}}">
+<view class="result-header">
+  <text class="header-text">搜索结果</text>
+</view>
+  <view class="book-item" wx:for="{{booklist}}" wx:key="_id" bindtap="goToBookDetail" data-item="{{item}}">
+    <view class="book-image-wrapper">
+      <lazy-image custom-class="book-image" src="{{item.image_url}}" mode="aspectFit"></lazy-image>
+    </view>
+    <view class="book-info">
+      <view class="book-title">{{item.book_name}}</view>
+      <view class="book-course">适用课程: {{item.course}}</view>
+      <view class="book-author">作者: {{item.book_author||'暂无'}}</view>
+      <view class="book-isbn">ISBN: {{item.book_isbn||'暂无'}}</view>
+    </view>
+  </view>
+</view>
+
+<view class="no-result" wx:else>
+  <text>暂无搜索结果</text>
+</view>
